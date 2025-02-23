@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stored Password Hashes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            color: #f9f9f9;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #4e54c8;
+            color: white;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #8f94fb;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stored Password Hashes</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Hashed Password</th>
+        </tr>
+        {% for user, hash in password_hashes %}
+        <tr>
+            <td>{{ user }}</td>
+            <td>{{ hash }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+</body>
+
+</html>
